@@ -44,22 +44,22 @@ export const products = [
     category: "wallet",
     image: "https://res.cloudinary.com/dyr0spgkc/image/upload/v1774550369/horse_leather_wallet_tan_yr3oaw.png",
     description:
-      "Ultra-slim cardholder in midnight black leather. Minimalist design with 4 card slots and center pocket.",
+      "Ultra-slim cardholder in midnight horse leather. Minimalist design with 4 card slots and center pocket.",
     badge: "New",
   },
   {
     id: "w5",
-    name: "Heritage Classic Wallet – Tan",
+    name: "Heritage Classic Wallet – brown",
     price: 1999,
     category: "wallet",
     image: "https://res.cloudinary.com/dyr0spgkc/image/upload/v1774550480/leather_long_wallet_dark_brown_th20cz.png",
     description:
-      "Ultra-slim cardholder in midnight black leather. Minimalist design with 4 card slots and center pocket.",
+      "Ultra-slim cardholder in midnight brown leather. Minimalist design with 4 card slots and center pocket.",
     badge: "New",
   },
   {
     id: "b1",
-    name: "Imperial Gold Buckle Belt",
+    name: "Imperial Silver Buckle Belt",
     price: 1799,
     category: "belt",
     image: "https://res.cloudinary.com/dyr0spgkc/image/upload/v1774550533/beltblack1_xqdhch.jpg",
@@ -69,11 +69,11 @@ export const products = [
   },
   {
     id: "b2",
-    name: "brown belt",
+    name: "Imperial brown belt",
     price: 1799,
     category: "belt",
     image: "https://res.cloudinary.com/dyr0spgkc/image/upload/v1774550406/leather_belt_brown_gwggmh.png",
     description:
-      "Rich cognac leather belt with brushed gold buckle. Vegetable-tanned for a natural patina that ages beautifully.",
+      "Rich cognac leather belt with brushed silver buckle. Vegetable-tanned for a natural patina that ages beautifully.",
   }
 ];
