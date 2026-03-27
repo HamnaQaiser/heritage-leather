@@ -7,6 +7,8 @@ const CartContext = createContext(undefined);
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const openCart = useCallback(() => setIsOpen(true), []);
+const closeCart = useCallback(() => setIsOpen(false), []);
 
   // Add to cart
   const addToCart = useCallback((product, quantity = 1) => {
@@ -54,6 +56,8 @@ export const CartProvider = ({ children }) => {
         clearCart,
         isOpen,
         setIsOpen,
+        openCart,     // ✅ ADD THIS
+        closeCart,
         totalItems,
         totalPrice,
       }}
