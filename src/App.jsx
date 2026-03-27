@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import FeaturedProducts from "./components/FeaturedProducts";
 import BrandStory from "./components/BrandStory";
-import CategorySection from "./components/CategorySection";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Testimonials from "./components/Testimonials";
 import LifestyleGallery from "./components/LifestyleGallery";
@@ -27,7 +26,6 @@ const Home = () => (
     <Navbar />
     <HeroSection />
     <FeaturedProducts />
-    <CategorySection />
     <BrandStory />
     <WhyChooseUs />
     <Testimonials />
