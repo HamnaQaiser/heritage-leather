@@ -23,11 +23,19 @@ const CheckoutPage = () => {
     phone: ""
   });
 
+  const [isProcessing, setIsProcessing] = useState(false);   
+
   const handlePlaceOrder = async () => {
+   
+    if (isProcessing) return; // ❌ ignore clicks while processing
+
+
     if (!form.email || !form.firstName || !form.address) {
       toast({ title: "Missing Fields", description: "Please fill all required fields." });
       return;
     }
+
+    setIsProcessing(true); // ✅ start processing
 
     // Generate HTML for email
     let itemsHTML = items.map(item => `
@@ -97,7 +105,9 @@ const CheckoutPage = () => {
     } catch (error) {
       console.error(error);
       toast({ title: "Error", description: "Order failed." });
-    }
+    } finally {
+    setIsProcessing(false); // ✅ reset processing state
+  }
   };
 
   if (placed) {
@@ -203,8 +213,8 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              <Button variant="luxury" size="lg" className="w-full mt-6" onClick={handlePlaceOrder}>
-                Place Order — Rs. {totalPrice}
+              <Button variant="luxury" size="lg" className="w-full mt-6" disabled={isProcessing} onClick={handlePlaceOrder}>
+                {isProcessing ? "Placing Order..." : `Place Order — Rs. ${totalPrice}`}
               </Button>
 
               <div className="flex items-center justify-center gap-2 mt-4">

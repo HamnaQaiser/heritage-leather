@@ -17,7 +17,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { totalItems, openCart } = useCart();
+  const { totalItems, toggleCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -72,7 +72,7 @@ const Navbar = () => {
             variant="ghost"
             size="icon"
             className="relative text-foreground hover:text-primary"
-            onClick={openCart}
+            onClick={toggleCart}
           >
             <ShoppingBag className="h-5 w-5 sm:h-6 sm:w-6" />
 

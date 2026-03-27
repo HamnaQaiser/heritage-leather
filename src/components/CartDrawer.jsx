@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
-  const { items, isOpen, setIsOpen, updateQuantity, removeFromCart, totalPrice, totalItems, clearCart } = useCart();
+  const { items, isOpen, setIsOpen, closeCart, updateQuantity, removeFromCart, totalPrice, totalItems, clearCart } = useCart();
   const navigate = useNavigate();
 
   if (!isOpen) return null;
@@ -28,7 +28,7 @@ const CartDrawer = () => {
             <h2 className="font-display text-xl">Your Cart</h2>
             <span className="font-body text-xs text-muted-foreground">({totalItems} items)</span>
           </div>
-          <button onClick={() => setIsOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors">
+          <button onClick={closeCart} className="text-muted-foreground hover:text-foreground transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>

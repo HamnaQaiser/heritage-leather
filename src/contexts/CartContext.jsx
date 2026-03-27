@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const openCart = useCallback(() => setIsOpen(true), []);
 const closeCart = useCallback(() => setIsOpen(false), []);
-
+const toggleCart = useCallback(() => setIsOpen(prev => !prev), []);
   // Add to cart
   const addToCart = useCallback((product, quantity = 1) => {
     setItems((prev) => {
@@ -58,6 +58,7 @@ const closeCart = useCallback(() => setIsOpen(false), []);
         setIsOpen,
         openCart,     // ✅ ADD THIS
         closeCart,
+        toggleCart,
         totalItems,
         totalPrice,
       }}

@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { useState } from "react";
 import { ArrowLeft, Star, ShoppingBag, Minus, Plus } from "lucide-react";
 import { Button } from "../components/ui/button";
@@ -16,6 +17,10 @@ const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [zoomed, setZoomed] = useState(false);
   const { addToCart, setIsOpen } = useCart();
+   // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // smooth scroll optional
+  }, []);
 
   if (!product) {
     return (
@@ -110,7 +115,6 @@ const ProductPage = () => {
                 <ShoppingBag className="w-5 h-5 mr-2" />
                 Add to Cart — Rs. {product.price * quantity}
               </Button>
-
               <Button variant="luxury-outline" size="lg" className="w-full" onClick={handleBuyNow}>
                 Buy Now
               </Button>
